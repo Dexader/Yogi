@@ -7,8 +7,16 @@ menuBtn.addEventListener('click', function () {
 	menu.classList.toggle('active');
 });
 
-const mediaQuery = window.matchMedia('(max-width: 767.98px)');
 let desktopMenu = document.querySelector('.menu__body');
-if (mediaQuery.matches) {
-	menu.innerHTML = desktopMenu.innerHTML + menu.innerHTML;
+
+function transferringContent(x) {
+	if(x.matches) {
+		menu.innerHTML = desktopMenu.innerHTML + menu.innerHTML;
+	} else {}
 }
+
+const mediaQuery = window.matchMedia('(max-width: 767.98px)');
+
+transferringContent(mediaQuery);
+
+mediaQuery.addEventListener('matches', transferringContent);

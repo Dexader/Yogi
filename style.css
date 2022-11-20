@@ -45,7 +45,7 @@ body {
 input,
 button,
 textarea {
-	font-family: "Poppins";
+	/*font-family: inherit;*/
 	font-size: inherit;
 }
 
@@ -121,11 +121,53 @@ h6 {
 	padding: 0 0.9375rem;
 }
 
+.text {
+	font-size: 20px;
+}
+
+@media screen and (max-width: 990.98px) {
+	.text {
+		font-size: 1rem;
+	}
+}
+
+.button {
+	display: inline-flex;
+	flex-direction: row-reverse;
+	justify-content: center;
+	align-items: center;
+	gap: 19px;
+	padding-block: 26px;
+	border-radius: 15px;
+	font-weight: 500;
+	letter-spacing: 0.01em;
+	background-color: var(--pink);
+	color: var(--white);
+	transition: box-shadow 0.3s ease 0s, transform 0.3s ease 0s;
+}
+
+.button span {
+	font-family: "Poppins";
+}
+
+.button:hover {
+	box-shadow: 0px 0px 8px 5px rgba(255, 112, 88, 0.5);
+	transform: scale(1.1);
+}
+
+.title {
+	font-weight: 700;
+	font-size: 40px;
+	letter-spacing: 0.02em;
+	color: var(--black);
+}
+
 /*Header*/
 .header {}
 
 .header__body {
 	justify-content: space-between;
+	padding-block: 18.5px 19.5px;
 }
 
 .header__body,
@@ -240,7 +282,7 @@ h6 {
 	width: 30px;
 	height: 30px;
 	position: relative;
-	z-index: 2;
+	z-index: 101;
 	overflow: hidden;
 }
 
@@ -274,6 +316,7 @@ h6 {
 	background: #FFEFBA;
 	transform: translateX(-100%);
 	transition: transform 0.5s;
+	z-index: 100;
 }
 
 .burger__body.active {
@@ -292,4 +335,324 @@ h6 {
 .burger__button.active span:nth-of-type(3) {
 	top: 50%;
 	transform: translate(-50%, 0%) rotate(-45deg);
+}
+
+/*Preview*/
+
+@media screen and (max-width: 767.98px) {
+	.preview {
+		position: relative;
+		background: url(img/Home/Main/Picture.png) center / cover no-repeat;
+	}
+
+	.preview::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background: rgba(0, 0, 0, 0.5);
+	}
+}
+
+.preview__body {
+	display: flex;
+	justify-content: space-between;
+	padding-block: 47px 83px;
+}
+
+@media screen and (max-width: 990.98px) {
+	.preview__body {
+		padding-block: 27px 63px;
+	}
+}
+
+.preview__content {
+	width: 40.625vw;
+	padding-top: 52px;
+	margin-right: 11.458333vw;
+	z-index: 2;
+}
+
+@media screen and (max-width: 767.98px) {
+	.preview__content {
+		flex: 1 1 auto;
+		margin-right: 0;
+	}
+}
+
+.preview__title {
+	font-weight: 700;
+	font-size: 72px;
+	line-height: 1.25;
+	letter-spacing: 0.01em;
+	color: var(--black);
+	margin-bottom: 2.91666vw;
+}
+
+@media screen and (max-width: 990.98px) {
+	.preview__title {
+		font-size: 48px;
+	}
+}
+
+.preview__text {
+	margin-bottom: 4.027777vw;
+}
+
+@media screen and (max-width: 767.98px) {
+	.preview__text {
+		color: var(--white);
+	}
+}
+
+.preview__offer {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.preview__button {
+	max-width: 230px;
+	width: 100%;
+	margin-right: 27px;
+	margin-bottom: 15px;
+}
+
+.preview__button::before {
+	font-size: 13px;
+}
+
+.preview__note {
+	font-weight: 500;
+	font-size: 16px;
+	color: var(--pink);
+}
+
+.preview__image {
+	display: block;
+}
+
+@media screen and (max-width: 990.98px) {
+	.preview__image {
+		margin: auto;
+	}
+}
+
+@media screen and (max-width: 767.98px) {
+	.preview__image {
+		display: none;
+	}
+}
+
+/*Company*/
+
+.company {
+	padding-block: 1.944444vw;
+}
+
+.company__title {
+	font-weight: 500;
+	font-size: 22px;
+	margin-bottom: 3.472222vw;
+	text-align: center;
+}
+
+@media screen and (max-width: 767.98px) {
+	.company__title {
+		font-size: 18px;
+	}
+}
+
+.company__clients {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 15px;
+}
+
+@media screen and (max-width: 990.98px) {
+	.company__clients {
+		flex-wrap: wrap;
+	}
+}
+
+@media screen and (max-width: 990.98px) {
+	.company__client {
+		flex: 0 1 47%;
+	}
+}
+
+@media screen and (max-width: 424.98px) {
+	.company__client {
+			flex: 0 1 100%;
+			margin-bottom: 25px;
+		}
+}
+
+/*Prices*/
+
+.prices__header {
+	padding-block: 33px 53px;
+	text-align: center;
+	background: rgba(255, 112, 88, 0.05);
+}
+
+.prices__title {
+	margin-bottom: 20px;
+}
+
+.card {
+	display: flex;
+	justify-content: space-between;
+	margin-block: 48px 115px;
+	padding-bottom: 30px;
+	column-gap: 15px;
+}
+
+@media screen and (max-width: 990.98px) {
+	.card {
+		row-gap: 15px;
+		column-gap: 0;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+}
+
+.card__item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	width: 396px;
+	max-width: 100%;
+	padding: 37px 52px 35px;
+	box-shadow: 0px 10px 55px rgba(241, 102, 24, 0.15);
+	border-radius: 15px;
+}
+
+@media screen and (max-width: 990.98px) {
+	.card__item {
+		width: 100%;
+		padding: 37px 26px 35px;
+	}
+}
+
+.card__item:nth-child(1) {
+	height: 56.485355%;
+}
+
+.card__item:nth-child(2) {
+	height: 76.778242%;
+}
+
+.card__price {
+	font-weight: 700;
+	font-size: 2.777777vw;
+	color: var(--black);
+	margin-bottom: 22px;
+}
+
+@media screen and (max-width: 990.98px) {
+	.card__price {
+		font-size: 40px;
+	}
+}
+
+.card__span {
+	font-weight: 400;
+	font-size: 1.25vw;
+	color: var(--font-color);
+}
+
+@media screen and (max-width: 990.98px) {
+	.card__price {
+		font-size: 18px;
+	}
+}
+
+.card__name {
+	font-weight: 600;
+	font-size: 2.5vw;
+	color: var(--pink);
+	margin-bottom: 22px;
+}
+
+@media screen and (max-width: 990.98px) {
+	.card__name {
+		font-size: 36px;
+	}
+}
+
+.card__text {
+	margin-bottom: 22px;
+}
+
+.card__line {
+	border-bottom: 2px solid #f2f2f2;
+	margin-bottom: 22px;
+}
+
+.card__list {
+	margin-bottom: 22px;
+}
+
+.card__option {
+	display: flex;
+	align-items: center;
+	font-weight: 500;
+	font-size: 1.388888vw;
+	color: var(--black);
+}
+
+@media screen and (max-width: 990.98px) {
+	.card__option {
+		font-size: 14px;
+	}
+}
+
+.card__option span {
+	font-family: 'Poppins';
+	margin-left: 15px;
+}
+
+.card__option:not(:last-child) {
+	margin-bottom: 29px;
+}
+
+@media screen and (max-width: 990.98px) {
+	.card__option span {
+		margin-left: 10px;
+	}
+}
+
+.card__option::before {
+	background: var(--black);
+	border-radius: 50%;
+	color: var(--white);
+	padding: 0.902777vw 0.694444vw;
+	font-size: 0.972222vw;
+}
+
+@media screen and (max-width: 990.98px) {
+	.card__option::before {
+		font-size: 12px;
+		padding: 13px 10px;
+	}
+}
+
+.card__button {
+	max-width: 100%;
+	width: 100%;
+	font-size: 1.25vw;
+	padding-block: 1.805555vw;
+}
+
+@media screen and (max-width: 990.98px) {
+	.card__button {
+		width: 60%;
+		font-size: 18px;
+	}
 }
