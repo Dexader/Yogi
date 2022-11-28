@@ -147,6 +147,14 @@ h6 {
 	transform: scale(1.1);
 }
 
+.main-title {
+	font-weight: 700;
+	font-size: clamp(2.63rem, 5vw, 4.75rem);
+	line-height: 1.25;
+	letter-spacing: 0.01em;
+	color: var(--black);
+}
+
 .title {
 	font-weight: 700;
 	font-size: clamp(2.00rem, 2.777777vw, 3.00rem);
@@ -154,8 +162,16 @@ h6 {
 	color: var(--black);
 }
 
+@media screen and (max-width: 61.93625rem) {
+	.main-title {
+		color: var(--white);
+	}
+}
+
 /*Header*/
-.header {}
+.header {
+	position: relative;
+}
 
 .header__body {
 	justify-content: space-between;
@@ -201,7 +217,7 @@ h6 {
 @media screen and (max-width: 47.99875rem) {
 	.menu__list {
 		flex-direction: column;
-		margin-bottom: 8.333333vw;
+		margin-bottom: 2.083333vw;
 	}
 }
 
@@ -299,6 +315,7 @@ h6 {
 
 .burger__body {
 	position: fixed;
+	overflow: auto;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -309,6 +326,10 @@ h6 {
 	transform: translateX(-100%);
 	transition: transform 0.5s;
 	z-index: 100;
+}
+
+.body.active {
+	overflow: hidden;
 }
 
 .burger__body.active {
@@ -337,8 +358,15 @@ h6 {
 	position: absolute;
 	left: 0;
 	top: 2%;
-	width: 249px;
+	width: min(17.291666vw, 15.56rem);
 	fill: rgba(255, 112, 88, 0.05);
+}
+
+.shape-2 {
+	position: absolute;
+	top: 61%;
+	right: 0;
+	width: min(34.444444vw, 31.00rem);
 }
 
 /*Preview*/
@@ -387,18 +415,7 @@ h6 {
 }
 
 .preview__title {
-	font-weight: 700;
-	font-size: 4.50rem;
-	line-height: 1.25;
-	letter-spacing: 0.01em;
-	color: var(--black);
 	margin-bottom: 2.91666vw;
-}
-
-@media screen and (max-width: 61.93625rem) {
-	.preview__title {
-		font-size: 3.00rem;
-	}
 }
 
 .preview__text {
@@ -1134,4 +1151,137 @@ option {
 .youtube {
 	width: 1.50rem;
 	height: 1.50rem;
+}
+
+
+/*Pricing page*/
+
+/*Offer*/
+
+.offer {
+	padding-block: clamp(1.88rem, 4.166666vw, 4.69rem) clamp(3.75rem, 10.138888vw, 10.63rem);
+}
+
+@media screen and (max-width: 61.93625rem) {
+	.offer {
+		background: url("img/Pricing/Pricing Main.png") center / cover no-repeat;
+	}
+}
+
+.offer__inner {
+	display: flex;
+	-moz-column-gap: clamp(3.13rem, 9.375vw, 9.69rem);
+	     column-gap: clamp(3.13rem, 9.375vw, 9.69rem);
+}
+
+.offer__content {
+	padding-block: clamp(1.25rem, 5.902777vw, 6.56rem) clamp(1.25rem, 3.541666vw, 4.06rem);
+}
+
+.offer__discount {
+	font-weight: 600;
+	letter-spacing: 0.01em;
+	color: var(--white);
+	padding-block: clamp(0.63rem, 0.972222vw, 1.13rem);
+	width: 70.3704%;
+	background-color: var(--pink);
+	border-radius: 0.63rem;
+	text-align: center;
+	margin-bottom: 0.88rem;
+	font-size: clamp(0.88rem, 1.25vw, 1.38rem);
+}
+
+.offer__title {
+	margin-bottom: 2.13rem;
+}
+
+.offer__image img {
+	width: clamp(28.13rem, 35.416666vw, 35.63rem);
+	border-radius: 0.75rem;
+}
+
+@media screen and (max-width: 61.93625rem) {
+	.offer__image {
+		display: none;
+	}
+}
+
+/*Help*/
+
+.help {
+	margin-bottom: clamp(12.56rem, 27.847222vw, 28.19rem);
+}
+
+@media screen and (max-width: 61.93625rem) {
+	.help {
+		position: relative;
+		background: url("img/Pricing/Pricing Help.png") center / cover no-repeat;
+		padding-block: 1.25rem;
+	}
+
+	.help::before {
+		position: absolute;
+		content: "";
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+}
+
+.help__inner {
+	position: relative;
+	z-index: 5;
+}
+
+.help__title {
+	padding-right: clamp(6.25rem, 27.430555vw, 25.31rem);
+	margin-bottom: clamp(2.56rem, 4.236111vw, 4.44rem);
+}
+
+.help__line {
+	display: block;
+	width: clamp(15.00rem, 20.069444vw, 19.31rem);
+	border-bottom: 0.13rem solid #94959A;
+	margin-bottom: clamp(2.50rem, 3.472222vw, 4.38rem);
+}
+
+.help__text {
+	padding-right: clamp(22.19rem, 45.486111vw, 41.88rem);
+	margin-bottom: 3.00rem;
+}
+
+@media screen and (max-width: 61.93625rem) {
+	.help__text,
+	.help__title {
+		padding-right: 0;
+	}
+}
+
+.help__button {
+	display: flex;
+	width: 14.38rem;
+	align-items: center;
+}
+
+.help__pic {
+	float: right;
+	width: clamp(28.13rem, 35.347222vw, 35.63rem);
+	border-radius: 0.75rem;
+	margin-top: -3.81rem;
+}
+
+@media screen and (max-width: 61.93625rem) {
+	.help__pic {
+		display: none;
+	}
+}
+
+.shape-3 {
+	position: absolute;
+	right: 0;
+	top: 60%;
+	width: 25.00rem;
+	z-index: -1;
 }
